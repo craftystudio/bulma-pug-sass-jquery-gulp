@@ -7,10 +7,12 @@ html.no-js(lang="")
         meta(name="description" content="")
         meta(name="viewport" content="width=device-width, initial-scale=1")
 
-        link(rel="apple-touch-icon" href="img/apple-touch-icon.png")
+        link(rel="apple-touch-icon" href="img/favicon.png")
         link(rel="stylesheet" href="css/style.min.css")
     body
-        p   Hello
+        section.section
+            div.hero.is-fullheight
+                div.hero-body
+                    h1(id="blink") Hello
 
-        script(src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js")
-        script(src="js/main.min.js")
+        script(src="js/script.js")

@@ -4,7 +4,9 @@
   "description": "Bulma.io, Pug, SASS and jQuery Boilerplate.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm install bulma --prefix ./sass/ && npm install jquery --prefix ./js/",
+    "postinstall": "gulp"
   },
   "keywords": [
     "gulp",
