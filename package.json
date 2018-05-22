@@ -1,0 +1,20 @@
+{
+  "name": "gulp-sass-bulma-jquery",
+  "version": "1.0.0",
+  "description": "Bulma.io, Pug, SASS and jQuery Boilerplate.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "pug",
+    "jade",
+    "bulma",
+    "jquery",
+    "npm"
+  ],
+  "author": "Tomo",
+  "license": "MIT"
+}
