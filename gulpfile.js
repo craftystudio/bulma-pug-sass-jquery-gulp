@@ -8,11 +8,22 @@ var imagemin = require('gulp-imagemin');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
+var connect = require('gulp-connect');
 var notify = require('gulp-notify');
 var cache = require('gulp-cache');
 var pug = require('gulp-pug');
 var livereload = require('gulp-livereload');
 var del = require('del');
+
+
+//server
+gulp.task('server', function() {
+  connect.server({
+    root: '_public',
+    livereload: true,
+    port: 9000
+  });
+});
 
 //html
 gulp.task('html', function() {
@@ -25,7 +36,7 @@ gulp.task('html', function() {
 
 //styles
 gulp.task('css', function() {
-  return gulp.src('sass/**/*.*')
+  return gulp.src(['sass/**/*.*', '!sass/bulma/**/*.*'])
     .pipe(plumber())
     .pipe(sass({ style: 'expanded' }))
     .pipe(autoprefixer('last 2 version'))
@@ -59,24 +70,20 @@ gulp.task('img', function() {
 
 //clean _public
 gulp.task('clean', function(cb) {
-  del(['_public/css/*', '_public/js/*', '_public/images/*'], cb)
+  del(['_public/css/*', '_public/js/*', '_public/img/*'], cb)
 });
 
 //def
-gulp.task('default', ['clean', 'html', 'css', 'js', 'img'], function() {
+gulp.task('default', ['server', 'clean', 'html', 'css', 'js', 'img'], function() {
   gulp.start('css', 'js', 'img');
 });
 
 
 //live reload / watch
 gulp.task('watch', function() {
-
   gulp.watch('*/*.pug', ['html']);
-
   gulp.watch('sass/*.*', ['css']);
-
   gulp.watch('js/*.js', ['js']);
-
   gulp.watch('img/**/*', ['img']);
 
   livereload.listen();
