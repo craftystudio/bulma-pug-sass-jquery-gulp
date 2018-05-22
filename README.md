@@ -1,1 +1,2 @@
-Just run 'npm install' then 'gulp' and...
+npm install
+gulp
