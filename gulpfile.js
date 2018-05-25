@@ -55,7 +55,7 @@ gulp.task('img', function() {
 
 //clean _public
 gulp.task('clean', function(cb) {
-  del(['_public/css/*', '_public/js/*', '_public/img/*'], cb)
+  del(['_public/*', '_public/css/*', '_public/js/*', '_public/img/*'], cb)
 });
 
 //live reload / watch
