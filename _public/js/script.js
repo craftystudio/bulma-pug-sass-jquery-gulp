@@ -10363,4 +10363,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-$('#blink').blink();
+$('#hello').delay(4000).fadeOut();

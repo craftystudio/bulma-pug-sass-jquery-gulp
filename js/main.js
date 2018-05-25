@@ -1,1 +1,1 @@
-$('.blink').blink();
+$('#hello').delay(4000).fadeOut();
